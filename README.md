@@ -1,4 +1,4 @@
-# dev-rpg
+# dev-rpg  - Gestão de tasks para Devs
 
 ## Project setup
 ```
