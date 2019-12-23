@@ -1,0 +1,162 @@
+{
+    "data": {
+        "categories": [
+            {
+                "digital": "11:17",
+                "hours": 11,
+                "minutes": 17,
+                "name": "Coding",
+                "percent": 100,
+                "text": "11 hrs 17 mins",
+                "total_seconds": 40651.044262
+            }
+        ],
+        "daily_average": 6101,
+        "daily_average_including_other_language": 6775,
+        "days_including_holidays": 7,
+        "days_minus_holidays": 6,
+        "editors": [
+            {
+                "digital": "11:17",
+                "hours": 11,
+                "minutes": 17,
+                "name": "VS Code",
+                "percent": 100,
+                "text": "11 hrs 17 mins",
+                "total_seconds": 40651.044262
+            }
+        ],
+        "holidays": 1,
+        "human_readable_daily_average": "1 hr 41 mins",
+        "human_readable_daily_average_including_other_language": "1 hr 52 mins",
+        "human_readable_total": "10 hrs 10 mins",
+        "human_readable_total_including_other_language": "11 hrs 17 mins",
+        "id": "f58e6e30-6f82-4554-bb34-35c481776ecf",
+        "is_already_updating": false,
+        "is_coding_activity_visible": false,
+        "is_including_today": false,
+        "is_other_usage_visible": true,
+        "is_stuck": false,
+        "is_up_to_date": true,
+        "languages": [
+            {
+                "digital": "5:36",
+                "hours": 5,
+                "minutes": 36,
+                "name": "Vue.js",
+                "percent": 49.68,
+                "text": "5 hrs 36 mins",
+                "total_seconds": 20194.369488
+            },
+            {
+                "digital": "2:14",
+                "hours": 2,
+                "minutes": 14,
+                "name": "JavaScript",
+                "percent": 19.91,
+                "text": "2 hrs 14 mins",
+                "total_seconds": 8091.893404
+            },
+            {
+                "digital": "1:07",
+                "hours": 1,
+                "minutes": 7,
+                "name": "Other",
+                "percent": 9.95,
+                "text": "1 hr 7 mins",
+                "total_seconds": 4043.600963
+            },
+            {
+                "digital": "0:56",
+                "hours": 0,
+                "minutes": 56,
+                "name": "JSON",
+                "percent": 8.36,
+                "text": "56 mins",
+                "total_seconds": 3400.058206
+            },
+            {
+                "digital": "0:30",
+                "hours": 0,
+                "minutes": 30,
+                "name": "Docker",
+                "percent": 4.46,
+                "text": "30 mins",
+                "total_seconds": 1812.132981
+            },
+            {
+                "digital": "0:15",
+                "hours": 0,
+                "minutes": 15,
+                "name": "YAML",
+                "percent": 2.32,
+                "text": "15 mins",
+                "total_seconds": 941.630899
+            },
+            {
+                "digital": "0:12",
+                "hours": 0,
+                "minutes": 12,
+                "name": "Markdown",
+                "percent": 1.87,
+                "text": "12 mins",
+                "total_seconds": 760.957306
+            },
+            {
+                "digital": "0:11",
+                "hours": 0,
+                "minutes": 11,
+                "name": "Python",
+                "percent": 1.74,
+                "text": "11 mins",
+                "total_seconds": 706.462038
+            },
+            {
+                "digital": "0:11",
+                "hours": 0,
+                "minutes": 11,
+                "name": "HTML",
+                "percent": 1.72,
+                "text": "11 mins",
+                "total_seconds": 697.595011
+            },
+            {
+                "digital": "0:00",
+                "hours": 0,
+                "minutes": 0,
+                "name": "Git Config",
+                "percent": 0.01,
+                "text": "0 secs",
+                "total_seconds": 2.343966
+            }
+        ],
+        "operating_systems": [
+            {
+                "digital": "10:38",
+                "hours": 10,
+                "minutes": 38,
+                "name": "Linux",
+                "percent": 94.22,
+                "text": "10 hrs 38 mins",
+                "total_seconds": 38299.685763
+            },
+            {
+                "digital": "0:39",
+                "hours": 0,
+                "minutes": 39,
+                "name": "Windows",
+                "percent": 5.78,
+                "text": "39 mins",
+                "total_seconds": 2351.358499
+            }
+        ],
+        "range": "last_7_days",
+        "status": "ok",
+        "timeout": 15,
+        "total_seconds": 36607.443299,
+        "total_seconds_including_other_language": 40651.044262,
+        "user_id": "9fed2f87-0337-478d-911c-76512824df98",
+        "username": "filhosergio",
+        "writes_only": false
+    }
+}
