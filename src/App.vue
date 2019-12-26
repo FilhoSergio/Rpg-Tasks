@@ -44,13 +44,13 @@
     </v-navigation-drawer>
 
     <v-content>
-      <v-container fluid class="grey lighten-4 fill-height">
+      <!-- <v-container fluid class="grey lighten-4 fill-height"> -->
         <v-row>
           <v-col sm12 md12>
-            <CardProfile ></CardProfile>
+            <CardProfile></CardProfile>
           </v-col>
         </v-row>
-      </v-container>
+      <!-- </v-container> -->
     </v-content>
   </v-app>
 </template>
@@ -60,7 +60,7 @@ import CardProfile from "@/components/profile/CardProfile.vue";
 // import axios from "axios";
 
 export default {
-   components: {
+  components: {
     CardProfile
   },
   props: {
@@ -86,10 +86,7 @@ export default {
     ],
     cardData: {}
   }),
-  created() {
-  
-
-  },
+  created() {},
   methods: {}
 };
 </script>
