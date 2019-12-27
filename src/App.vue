@@ -45,11 +45,16 @@
 
     <v-content>
       <!-- <v-container fluid class="grey lighten-4 fill-height"> -->
-        <v-row>
-          <v-col sm12 md12>
-            <CardProfile></CardProfile>
-          </v-col>
-        </v-row>
+      <v-row>
+        <v-col sm12 md12>
+          <CardProfile></CardProfile>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col sm4 md4>
+          <Habits></Habits>
+        </v-col>
+      </v-row>
       <!-- </v-container> -->
     </v-content>
   </v-app>
@@ -57,11 +62,13 @@
 
 <script>
 import CardProfile from "@/components/profile/CardProfile.vue";
+import Habits from "@/components/lists/Habits.vue";
 // import axios from "axios";
 
 export default {
   components: {
-    CardProfile
+    CardProfile,
+    Habits
   },
   props: {
     source: String

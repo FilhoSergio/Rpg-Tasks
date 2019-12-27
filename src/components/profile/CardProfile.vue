@@ -22,7 +22,7 @@
         <v-list-item-title class="headline mb-1">
           {{ cardData.display_name }}</v-list-item-title
         >
-        <p>{{ cardData.username }} - Nível 1 - Front end</p>
+        <p>{{ cardData.username }} - Nível 2 - Front end</p>
         <v-list-item-subtitle>{{
           cardData.human_readable_website
         }}</v-list-item-subtitle>
@@ -40,26 +40,67 @@
         >
       </v-list-item-content>
     </v-list-item>
+    <v-card-title> <span class="text-center"> Atributos </span> </v-card-title>
+    <v-card-text>
+      <ve-radar :data="chartData" :settings="chartSettings"></ve-radar>
+    </v-card-text>
 
     <v-card-actions>
-      <v-btn text>Button</v-btn>
-      <v-btn text>Button</v-btn>
+      <v-btn text> Editar </v-btn>
+      <v-btn text> Convidar </v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
 import Api from "@/services/api.js";
-
+import VeRadar from "v-charts/lib/radar.common";
 export default {
   props: {
     source: String
   },
-  data: () => ({
-    drawer: null,
-    cardData: {},
-    perfil: "src/assets/img/iconfinder_Werewolf_2913109.png"
-  }),
+  components: {
+    VeRadar
+  },
+  data() {
+    this.chartSettings = {
+      dimension: ["js"],
+      metrics: ["cost", "profit", "growthRate"],
+      dataType: { growthRate: "percent" }
+    };
+    return {
+      drawer: null,
+      cardData: {},
+      perfil: "src/assets/img/iconfinder_Werewolf_2913109.png",
+      chartData: {
+        columns: ["js", "scrum", "projects", "framework", "people"],
+        rows: [
+          {
+            js: "01/01",
+            cost: 1523,
+            profit: 1523,
+            growthRate: 0.12,
+            people: 100
+          },
+          {
+            js: "01/02",
+            cost: 1223,
+            profit: 1523,
+            growthRate: 0.345,
+            people: 100
+          },
+          {
+            js: "01/03",
+            cost: 2123,
+            profit: 1523,
+            growthRate: 0.7,
+            people: 100
+          }
+        ]
+      }
+    };
+  },
+
   async created() {
     const service = await Api.get("http://localhost:3000/data");
     this.cardData = service.data;
