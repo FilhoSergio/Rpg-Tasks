@@ -9,7 +9,7 @@
         />
       </v-avatar>
       <span class="title ml-3 mr-5">
-        <span class="font-weight-light t-w">Dev Rpg</span>
+        <span class="font-weight-light t-w">tersterendjklfjdslfjdslkf</span>
       </span>
       <v-spacer />
       <v-avatar color="red">
@@ -45,22 +45,12 @@
 
     <v-content>
       <!-- <v-container fluid class="grey lighten-4 fill-height"> -->
-      <v-row style="display: none;">
+      <v-row>
         <v-col sm12 md12>
           <CardProfile></CardProfile>
         </v-col>
       </v-row>
-      <v-row>
-        <v-col sm="4" class="pa-2">
-          <Habits></Habits>
-        </v-col>
-        <v-col sm="4" class="pa-2">
-          <Habits></Habits>
-        </v-col>
-        <v-col sm="4" class="pa-2">
-          <Habits></Habits>
-        </v-col>
-      </v-row>
+
       <!-- </v-container> -->
     </v-content>
   </v-app>
@@ -68,13 +58,10 @@
 
 <script>
 import CardProfile from "@/components/profile/CardProfile.vue";
-import Habits from "@/components/lists/Habits.vue";
-// import axios from "axios";
 
 export default {
   components: {
-    CardProfile,
-    Habits
+    CardProfile
   },
   props: {
     source: String
@@ -82,15 +69,16 @@ export default {
   data: () => ({
     drawer: null,
     items: [
-      { icon: "lightbulb_outline", text: "Tasks" },
-      { icon: "touch_app", text: "Lembretes" },
+      { icon: "lightbulb_outline", text: "Perfil" },
+      { icon: "touch_app", text: "Reminders" },
       { divider: true },
-
+      { heading: "Labels" },
+      { icon: "add", text: "Create new label" },
       { divider: true },
       { icon: "archive", text: "Archive" },
       { icon: "delete", text: "Trash" },
       { divider: true },
-      { icon: "settings", text: "Configurações" },
+      { icon: "settings", text: "Settings" },
       { icon: "chat_bubble", text: "Trash" },
       { icon: "help", text: "Help" },
       { icon: "phonelink", text: "App downloads" },

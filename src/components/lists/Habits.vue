@@ -1,5 +1,5 @@
 <template>
-  <v-container style="max-width: 500px">
+  <v-container style="max-width: 800px">
     <v-text-field
       v-model="task"
       label="Adicionar Task"
@@ -12,6 +12,15 @@
         </v-icon>
       </v-fade-transition>
     </v-text-field>
+    <!-- <v-toolbar color="#a03774" dark>
+      <v-toolbar-title></v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-btn icon>
+        <v-icon>mdi-view-module</v-icon>
+      </v-btn>
+    </v-toolbar> -->
 
     <h2 class="display-1 success--text pl-4">
       Tasks:&nbsp;
@@ -63,6 +72,15 @@
             <v-spacer></v-spacer>
 
             <v-scroll-x-transition>
+              <!-- <v-icon class="pointer" color="black">
+                more_vert
+              </v-icon> -->
+              <v-tooltip bottom>
+                <template v-slot:activator="{ on }">
+                  <v-icon color="grey" class="pointer" dark v-on="on"> more_vert </v-icon>
+                </template>
+                <span>Opções</span>
+              </v-tooltip>
               <v-icon v-if="task.done" color="success">
                 check
               </v-icon>
@@ -124,6 +142,6 @@ export default {
 </script>
 <style>
 .pointer {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="744" outlined>
+  <v-card class="mx-auto" max-width="100%" outlined>
     <v-col class="main-theme">
       <p class="float-right">
         <v-img
@@ -41,7 +41,12 @@
       </v-list-item-content>
     </v-list-item>
     <v-card-title> <span class="text-center"> Atributos </span> </v-card-title>
-    <v-card-text>
+    <div class="text-center mb-2">
+      <v-btn text color="deep-purple" @click="showNav = !showNav">
+        Detalhes
+      </v-btn>
+    </div>
+    <v-card-text v-model="activeBtn" :input-value="showNav" v-if="showNav">
       <ve-radar :data="chartData" :settings="chartSettings"></ve-radar>
     </v-card-text>
 
@@ -71,6 +76,8 @@ export default {
     return {
       drawer: null,
       cardData: {},
+      activeBtn: 1,
+      showNav: true,
       perfil: "src/assets/img/iconfinder_Werewolf_2913109.png",
       chartData: {
         columns: ["js", "scrum", "projects", "framework", "people"],
