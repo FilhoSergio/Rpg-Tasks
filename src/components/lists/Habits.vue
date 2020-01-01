@@ -1,5 +1,14 @@
 <template>
   <v-container style="max-width: 800px">
+    <h2 class="display-1 success--text pl-4">
+      Tasks:&nbsp;
+      <v-fade-transition leave-absolute>
+        <span :key="`tasks-${tasks.length}`">
+          {{ tasks.length }}
+        </span>
+      </v-fade-transition>
+    </h2>
+
     <v-text-field
       v-model="task"
       label="Adicionar Task"
@@ -21,15 +30,6 @@
         <v-icon>mdi-view-module</v-icon>
       </v-btn>
     </v-toolbar> -->
-
-    <h2 class="display-1 success--text pl-4">
-      Tasks:&nbsp;
-      <v-fade-transition leave-absolute>
-        <span :key="`tasks-${tasks.length}`">
-          {{ tasks.length }}
-        </span>
-      </v-fade-transition>
-    </h2>
 
     <v-divider class="mt-4"></v-divider>
 
@@ -72,12 +72,11 @@
             <v-spacer></v-spacer>
 
             <v-scroll-x-transition>
-              <!-- <v-icon class="pointer" color="black">
-                more_vert
-              </v-icon> -->
               <v-tooltip bottom>
                 <template v-slot:activator="{ on }">
-                  <v-icon color="grey" class="pointer" dark v-on="on"> more_vert </v-icon>
+                  <v-icon color="grey" class="pointer" dark v-on="on">
+                    more_vert
+                  </v-icon>
                 </template>
                 <span>Opções</span>
               </v-tooltip>
@@ -102,13 +101,14 @@ export default {
       tasks: [
         {
           done: false,
-          text: "Foobar"
+          text: "Tarefa a"
         },
         {
           done: false,
-          text: "Fizzbuzz"
+          text: "Tarefa b"
         }
       ],
+      dialog: false,
       task: null
     };
   },

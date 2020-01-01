@@ -40,15 +40,26 @@
         >
       </v-list-item-content>
     </v-list-item>
-    <v-card-title> <span class="text-center"> Atributos </span> </v-card-title>
-    <div class="text-center mb-2">
-      <v-btn text color="deep-purple" @click="showNav = !showNav">
-        Detalhes
-      </v-btn>
-    </div>
-    <v-card-text v-model="activeBtn" :input-value="showNav" v-if="showNav">
-      <ve-radar :data="chartData" :settings="chartSettings"></ve-radar>
-    </v-card-text>
+
+    <v-tabs centered>
+      <v-tab>Perfil</v-tab>
+      <v-tab>Atributos </v-tab>
+      <v-tab>Conquistas</v-tab>
+      <v-tab-item> </v-tab-item>
+      <v-tab-item>
+        <v-card-title>
+          <span class="text-center"> Atributos </span>
+        </v-card-title>
+        <div class="text-center mb-2">
+          <v-btn text color="deep-purple" @click="showNav = !showNav">
+            Detalhes
+          </v-btn>
+        </div>
+        <v-card-text v-model="activeBtn" :input-value="showNav" v-if="showNav">
+          <ve-radar :data="chartData" :settings="chartSettings"></ve-radar>
+        </v-card-text>
+      </v-tab-item>
+    </v-tabs>
 
     <v-card-actions>
       <v-btn text> Editar </v-btn>

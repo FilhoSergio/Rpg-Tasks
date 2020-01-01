@@ -55,10 +55,10 @@
         <v-col sm="4" class="pa-2">
           <Habits></Habits>
         </v-col>
-        <v-col sm="4" class="pa-2">
+        <v-col sm="4" class="pa-2" style="display: none;">
           <Checklist></Checklist>
         </v-col>
-        <v-col sm="4" class="pa-2">
+        <v-col sm="4" class="pa-2" style="display: none;">
           <Habits></Habits>
         </v-col>
       </v-row>
@@ -71,6 +71,7 @@
 import CardProfile from "@/components/profile/CardProfile.vue";
 import Habits from "@/components/lists/Habits.vue";
 import Checklist from "@/components/lists/Checklist.vue";
+// import route from "vue-router"
 // import axios from "axios";
 
 export default {
