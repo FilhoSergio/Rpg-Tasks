@@ -19,12 +19,12 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
- 
+
     component: Home
   },
   {
     path: "/perfil",
-  
+
     component: Profile
   }
 ];
