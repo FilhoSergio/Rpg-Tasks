@@ -1,0 +1,28 @@
+version: "3"
+services:
+
+  proxy-reverso:
+    image: nginx:latest
+    ports:
+      - "${MYPORT}:80"
+    volumes:
+      - ./configs/proxy/default.conf:/etc/nginx/conf.d/default.conf
+    extra_hosts:
+      - djn018.ce.sebrae.com.br:200.19.183.205
+      - pa2dev.ce.sebrae.com.br:200.19.183.205
+
+
+  web:
+    build:
+      context: .
+      dockerfile: ./dockers/dev-rpg/Dockerfile
+    volumes:
+      - ./source/:/source
+    env_file:
+      - .env
+    command: npm run serve
+    # ports:
+    #   - "${MYPORT}:8080"
+    extra_hosts:
+      - djn018.ce.sebrae.com.br:200.19.183.205
+      # - pa2dev.ce.sebrae.com.br:200.19.183.205

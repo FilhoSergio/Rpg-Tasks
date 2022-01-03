@@ -1,129 +1,114 @@
 <template>
-  <v-app id="inspire">
-    <v-navigation-drawer
-      v-model="drawerRight"
-      app
-      clipped
-      right
-    >
-      <v-list dense>
-        <v-list-item @click.stop="right = !right">
-          <v-list-item-action>
-            <v-icon>mdi-exit-to-app</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Open Temporary Drawer</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-
-    <v-app-bar
-      app
-      clipped-right
-      color="blue-grey"
-      dark
-    >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>Toolbar</v-toolbar-title>
+  <v-app id="keep">
+    <v-app-bar app clipped-left color="#a03774">
+      <v-app-bar-nav-icon class="t-w" @click="drawer = !drawer" />
+      <v-avatar>
+        <img
+          src="https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Crystal_Shard-512.png"
+          alt="Logo"
+        />
+      </v-avatar>
+      <span class="title ml-3 mr-5">
+        <span class="font-weight-light t-w">Dev Rpg</span>
+      </span>
       <v-spacer />
-      <v-app-bar-nav-icon @click.stop="drawerRight = !drawerRight" />
+      <v-avatar color="red">
+        <span class="white--text headline">FS</span>
+      </v-avatar>
     </v-app-bar>
 
-    <v-navigation-drawer
-      v-model="drawer"
-      app
-    >
-      <v-list dense>
-        <v-list-item @click.stop="left = !left">
-          <v-list-item-action>
-            <v-icon>mdi-exit-to-app</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Open Temporary Drawer</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+    <v-navigation-drawer v-model="drawer" app clipped color="grey lighten-4">
+      <v-list dense class="grey lighten-4">
+        <template v-for="(item, i) in items">
+          <v-row v-if="item.heading" :key="i" align="center">
+            <v-col cols="6">
+              <v-subheader v-if="item.heading">{{ item.heading }}</v-subheader>
+            </v-col>
+            <v-col cols="6" class="text-right">
+              <v-btn small text>edit</v-btn>
+            </v-col>
+          </v-row>
+          <v-divider v-else-if="item.divider" :key="i" dark class="my-4" />
+          <v-list-item v-else :key="i" link>
+            <v-list-item-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title class="grey--text">
+                {{ item.text }}
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </template>
       </v-list>
     </v-navigation-drawer>
 
-    <v-navigation-drawer
-      v-model="left"
-      fixed
-      temporary
-    />
-
     <v-content>
-      <v-container
-        class="fill-height"
-        fluid
-      >
-        <v-row
-          justify="center"
-          align="center"
-        >
-          <v-col class="shrink">
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  :href="source"
-                  icon
-                  large
-                  target="_blank"
-                  v-on="on"
-                >
-                  <v-icon large>mdi-code-tags</v-icon>
-                </v-btn>
-              </template>
-              <span>Source</span>
-            </v-tooltip>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  icon
-                  large
-                
-                  target="_blank"
-                  v-on="on"
-                >
-                  <v-icon large>mdi-codepen</v-icon>
-                </v-btn>
-              </template>
-              <span>Codepen</span>
-            </v-tooltip>
-          </v-col>
-        </v-row>
-      </v-container>
+      <!-- <v-container fluid class="grey lighten-4 fill-height"> -->
+      <v-row style="display: none;">
+        <v-col sm12 md12>
+          <CardProfile></CardProfile>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col sm="4" class="pa-2">
+          <Habits></Habits>
+        </v-col>
+        <v-col sm="4" class="pa-2">
+          <Habits></Habits>
+        </v-col>
+        <v-col sm="4" class="pa-2">
+          <Habits></Habits>
+        </v-col>
+      </v-row>
+      <!-- </v-container> -->
     </v-content>
-
-    <v-navigation-drawer
-      v-model="right"
-      fixed
-      right
-      temporary
-    />
-
-    <v-footer
-      app
-      color="blue-grey"
-      class="white--text"
-    >
-      <span>Vuetify</span>
-      <v-spacer />
-      <span>&copy; 2019</span>
-    </v-footer>
   </v-app>
 </template>
 
 <script>
-  export default {
-    props: {
-      source: String,
-    },
-    data: () => ({
-      drawer: null,
-      drawerRight: null,
-      right: false,
-      left: false,
-    }),
-  }
+import CardProfile from "@/components/profile/CardProfile.vue";
+import Habits from "@/components/lists/Habits.vue";
+// import axios from "axios";
+
+export default {
+  components: {
+    CardProfile,
+    Habits
+  },
+  props: {
+    source: String
+  },
+  data: () => ({
+    drawer: null,
+    items: [
+      { icon: "lightbulb_outline", text: "Tasks" },
+      { icon: "touch_app", text: "Lembretes" },
+      { divider: true },
+
+      { divider: true },
+      { icon: "archive", text: "Archive" },
+      { icon: "delete", text: "Trash" },
+      { divider: true },
+      { icon: "settings", text: "Configurações" },
+      { icon: "chat_bubble", text: "Trash" },
+      { icon: "help", text: "Help" },
+      { icon: "phonelink", text: "App downloads" },
+      { icon: "keyboard", text: "Keyboard shortcuts" }
+    ],
+    cardData: {}
+  }),
+  created() {},
+  methods: {}
+};
 </script>
+
+<style>
+#keep .v-navigation-drawer__border {
+  display: none;
+}
+
+.t-w {
+  color: white !important;
+}
+</style>
